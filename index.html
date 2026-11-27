@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 11 — Professions, Workplaces & Family</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #fefce8 50%, #fdf2f8 100%);
+      color: #1e293b;
+    }
+    h1, h2, h3, .font-display {
+      font-family: 'Fredoka', sans-serif;
+    }
+    .card-shadow {
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -3px rgba(15, 23, 42, 0.04);
+    }
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.65rem center;
+      background-size: 1rem;
+      padding-right: 2.1rem;
+    }
+    .select-correct {
+      border-color: #16a34a !important;
+      background-color: #dcfce7 !important;
+      color: #14532d !important;
+    }
+    .select-wrong {
+      border-color: #dc2626 !important;
+      background-color: #fee2e2 !important;
+      color: #7f1d1d !important;
+    }
+    .btn-press:active {
+      transform: scale(0.96);
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-display font-bold text-lg shadow">
+          Lesson 11
+        </span>
+        <div>
+          <h1 class="text-lg sm:text-xl font-bold text-slate-800 leading-tight">
+            Professions, Workplaces &amp; Family
+          </h1>
+          <p class="text-xs text-slate-500">Інтерактивний робочий аркуш (с. 44 підручника • с. 37–38 зошита)</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="bg-sky-50 border border-sky-200 rounded-xl px-3.5 py-1.5 flex items-center gap-2">
+          <span class="text-xs font-semibold text-sky-700 uppercase tracking-wide">Бали:</span>
+          <span id="total-score" class="font-display font-bold text-lg text-sky-900">0</span>
+          <span class="text-slate-400 font-semibold">/</span>
+          <span id="max-score" class="font-display font-bold text-slate-600">0</span>
+        </div>
+        <button type="button" onclick="resetAll()" class="btn-press px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+          🔄 Спочатку
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 pt-6 space-y-8">
+
+    <!-- ========================================================= -->
+    <!-- ЧАСТИНА 1: ПІДРУЧНИК (с. 44) -->
+    <!-- ========================================================= -->
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 font-display font-semibold text-sm">
+        📘 Підручник • Page 44
+      </span>
+      <div class="h-px flex-1 bg-indigo-100"></div>
+    </div>
+
+    <!-- ВПРАВА 1 (Підручник): Listen and point. Then read. -->
+    <section class="bg-white rounded-3xl p-5 sm:p-7 border border-sky-100 card-shadow">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-rose-500 text-white font-display font-bold text-xl flex items-center justify-center shadow">1</span>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800">Listen and point. Then read.</h2>
+            <p class="text-sm text-slate-500">Слухай та показуй. Тоді прочитай.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="speakSlow('Listen and point. Then read.')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-semibold transition">
+            🐢 0.5x Завдання
+          </button>
+          <button type="button" onclick="toggleTranslation('trans-tb-1')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 text-sm font-semibold transition">
+            🇺🇦 Переклад
+          </button>
+        </div>
+      </div>
+
+      <div id="trans-tb-1" class="hidden mb-4 p-3 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-900">
+        <strong>Переклад завдання:</strong> Послухай і вкажи на малюнок. Потім прочитай речення вголос.
+      </div>
+
+      <!-- Речення 1-6 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6" id="tb-ex1-sentences"></div>
+
+      <!-- Ілюстрації a - f -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4" id="tb-ex1-pictures"></div>
+    </section>
+
+    <!-- ВПРАВА 2 (Підручник): Match -->
+    <section class="bg-white rounded-3xl p-5 sm:p-7 border border-emerald-100 card-shadow">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-emerald-500 text-white font-display font-bold text-xl flex items-center justify-center shadow">2</span>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800">Match.</h2>
+            <p class="text-sm text-slate-500">Добери літеру малюнка (a–f) до кожного речення з вправи 1.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="speakSlow('Match the pictures to the sentences.')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-semibold transition">
+            🐢 0.5x Завдання
+          </button>
+          <button type="button" onclick="toggleTranslation('trans-tb-2')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 text-sm font-semibold transition">
+            🇺🇦 Переклад
+          </button>
+        </div>
+      </div>
+
+      <div id="trans-tb-2" class="hidden mb-4 p-3 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-900">
+        <strong>Переклад завдання:</strong> З’єднай кожне речення (1–6) із відповідним малюнком (a–f). Приклад: 1 — d (секретар працює в офісі).
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5" id="tb-ex2-grid"></div>
+    </section>
+
+    <!-- ВПРАВА 3 (Підручник): Have a talk in pairs -->
+    <section class="bg-white rounded-3xl p-5 sm:p-7 border border-purple-100 card-shadow">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-purple-500 text-white font-display font-bold text-xl flex items-center justify-center shadow">3</span>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800">Have a talk in pairs.</h2>
+            <p class="text-sm text-slate-500">Поговоріть удвох. Послухай зразок діалогу та склади власний.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="speakSlow('Have a talk in pairs.')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-semibold transition">
+            🐢 0.5x Завдання
+          </button>
+          <button type="button" onclick="toggleTranslation('trans-tb-3')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 text-sm font-semibold transition">
+            🇺🇦 Переклад
+          </button>
+        </div>
+      </div>
+
+      <div id="trans-tb-3" class="hidden mb-4 p-3 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-900">
+        <strong>Переклад зразка діалогу:</strong><br/>
+        — Ким працює твоя мама / твій тато / твій дядько / твоя тітка? (What is your mother's / father's / uncle's / aunt's job?)<br/>
+        — Він / Вона працює... (He/She is a ...)<br/>
+        — Де він / вона працює? (Where does he/she work?)<br/>
+        — Він / Вона працює в / на ... (He/She works in/on a ...)
+      </div>
+
+      <!-- Зразки фраз з підручника -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+        <div class="p-3.5 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-between gap-2">
+          <span class="font-semibold text-purple-950 text-sm">What is your mother's / father's / uncle's / aunt's job?</span>
+          <button type="button" onclick="speakSlow('What is your mother\'s, father\'s, uncle\'s, or aunt\'s job?')" class="shrink-0 px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+            🐢 0.5x
+          </button>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-between gap-2">
+          <span class="font-semibold text-indigo-950 text-sm">He / She is a ...</span>
+          <button type="button" onclick="speakSlow('He or she is a...')" class="shrink-0 px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+            🐢 0.5x
+          </button>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-between gap-2">
+          <span class="font-semibold text-purple-950 text-sm">Where does he / she work?</span>
+          <button type="button" onclick="speakSlow('Where does he or she work?')" class="shrink-0 px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+            🐢 0.5x
+          </button>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-between gap-2">
+          <span class="font-semibold text-indigo-950 text-sm">He / She works in / on a ...</span>
+          <button type="button" onclick="speakSlow('He or she works in or on a...')" class="shrink-0 px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+            🐢 0.5x
+          </button>
+        </div>
+      </div>
+
+      <!-- Інтерактивний конструктор діалогу -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+        <div class="text-sm font-bold text-slate-700">🎭 Тренажер діалогу (обери варіанти та прослухай весь діалог):</div>
+        <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+          <span class="font-semibold text-purple-700">Питання 1:</span>
+          <span>What is your</span>
+          <select id="dlg-relative" class="px-3 py-1.5 rounded-xl border-2 border-purple-300 bg-white font-semibold text-slate-800">
+            <option value="mother's|She">mother's (мами)</option>
+            <option value="father's|He">father's (тата)</option>
+            <option value="uncle's|He">uncle's (дядька)</option>
+            <option value="aunt's|She">aunt's (тітки)</option>
+          </select>
+          <span>job?</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+          <span class="font-semibold text-indigo-700">Відповідь 1:</span>
+          <span id="dlg-pronoun-1" class="font-bold text-indigo-900">She</span>
+          <span>is a</span>
+          <select id="dlg-job" class="px-3 py-1.5 rounded-xl border-2 border-indigo-300 bg-white font-semibold text-slate-800">
+            <option value="secretary|in an office">secretary</option>
+            <option value="teacher|in a school">teacher</option>
+            <option value="farmer|on a farm">farmer</option>
+            <option value="doctor|in a hospital">doctor</option>
+            <option value="seller|in a shop">seller</option>
+            <option value="waiter|in a café">waiter</option>
+          </select>.
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+          <span class="font-semibold text-purple-700">Питання 2:</span>
+          <span>Where does</span>
+          <span id="dlg-pronoun-2" class="font-bold text-purple-900">she</span>
+          <span>work?</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+          <span class="font-semibold text-indigo-700">Відповідь 2:</span>
+          <span id="dlg-pronoun-3" class="font-bold text-indigo-900">She</span>
+          <span>works</span>
+          <select id="dlg-place" class="px-3 py-1.5 rounded-xl border-2 border-indigo-300 bg-white font-semibold text-slate-800">
+            <option value="in an office">in an office</option>
+            <option value="in a school">in a school</option>
+            <option value="on a farm">on a farm</option>
+            <option value="in a hospital">in a hospital</option>
+            <option value="in a shop">in a shop</option>
+            <option value="in a café">in a café</option>
+          </select>.
+        </div>
+
+        <div class="pt-2 flex flex-wrap items-center gap-2">
+          <button type="button" onclick="speakDialogue()" class="btn-press inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-sm shadow-sm transition">
+            🐢 0.5x Послухати діалог
+          </button>
+          <button type="button" onclick="checkDialogue()" class="btn-press inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition">
+            ✅ Перевірити відповідність
+          </button>
+          <span id="dlg-feedback" class="text-sm font-bold"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ЧАСТИНА 2: РОБОЧИЙ ЗОШИТ (с. 37) -->
+    <!-- ========================================================= -->
+    <div class="flex items-center gap-2 pt-2">
+      <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-display font-semibold text-sm">
+        📒 Робочий зошит • Page 37
+      </span>
+      <div class="h-px flex-1 bg-amber-200"></div>
+    </div>
+
+    <!-- ВПРАВА 1 (Зошит с. 37): Fill in the missing letters -->
+    <section class="bg-white rounded-3xl p-5 sm:p-7 border border-amber-100 card-shadow">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-amber-500 text-white font-display font-bold text-xl flex items-center justify-center shadow">1</span>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800">Fill in the missing letters.</h2>
+            <p class="text-sm text-slate-500">Обери пропущені літери зі списку, щоб утворити назви місць роботи.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="speakSlow('Fill in the missing letters.')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-semibold transition">
+            🐢 0.5x Завдання
+          </button>
+          <button type="button" onclick="toggleTranslation('trans-wb-1')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 text-sm font-semibold transition">
+            🇺🇦 Переклад
+          </button>
+        </div>
+      </div>
+
+      <div id="trans-wb-1" class="hidden mb-4 p-3 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-900">
+        <strong>Переклад завдання:</strong> Встав пропущені літери у слова: <em>school</em> (школа), <em>shop</em> (магазин), <em>farm</em> (ферма), <em>café</em> (кафе), <em>hospital</em> (лікарня), <em>office</em> (офіс).
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="wb-ex1-grid"></div>
+    </section>
+
+    <!-- ВПРАВА 2 (Зошит с. 37): Complete the sentences -->
+    <section class="bg-white rounded-3xl p-5 sm:p-7 border border-sky-100 card-shadow">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-sky-500 text-white font-display font-bold text-xl flex items-center justify-center shadow">2</span>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800">Complete the sentences.</h2>
+            <p class="text-sm text-slate-500">Доповни речення, обравши правильне місце роботи зі списку.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="speakSlow('Complete the sentences.')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-semibold transition">
+            🐢 0.5x Завдання
+          </button>
+          <button type="button" onclick="toggleTranslation('trans-wb-2')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 text-sm font-semibold transition">
+            🇺🇦 Переклад
+          </button>
+        </div>
+      </div>
+
+      <div id="trans-wb-2" class="hidden mb-4 p-3 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-900">
+        <strong>Переклад завдання:</strong> Доповни речення, вказавши, де працює кожна людина (наприклад: <em>A seller works in a shop</em>).
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="wb-ex2-grid"></div>
+    </section>
+
+    <!-- ВПРАВА 3 (Зошит с. 37): Complete the table -->
+    <section class="bg-white rounded-3xl p-5 sm:p-7 border border-teal-100 card-shadow">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-teal-500 text-white font-display font-bold text-xl flex items-center justify-center shadow">3</span>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800">Complete the table.</h2>
+            <p class="text-sm text-slate-500">Доповни таблицю запитань відповідно до займенників (I → my, You → your, He → his, She → her).</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="speakSlow('Complete the table.')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-semibold transition">
+            🐢 0.5x Завдання
+          </button>
+          <button type="button" onclick="toggleTranslation('trans-wb-3')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 text-sm font-semibold transition">
+            🇺🇦 Переклад
+          </button>
+        </div>
+      </div>
+
+      <div id="trans-wb-3" class="hidden mb-4 p-3 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-900">
+        <strong>Переклад завдання:</strong> Доповни таблицю запитань:<br/>
+        • I — What is <strong>my</strong> job? (Яка моя професія?)<br/>
+        • You — What is <strong>your</strong> job? (Яка твоя професія?)<br/>
+        • He — What is <strong>his</strong> job? (Яка його професія?)<br/>
+        • She — What is <strong>her</strong> job? (Яка її професія?)
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse rounded-2xl overflow-hidden border border-slate-200">
+          <thead>
+            <tr class="bg-teal-50 text-teal-900 text-left text-sm">
+              <th class="p-3.5 border-b border-r border-slate-200 w-24">Займенник</th>
+              <th class="p-3.5 border-b border-r border-slate-200">Запитання</th>
+              <th class="p-3.5 border-b border-slate-200 text-right">Дії</th>
+            </tr>
+          </thead>
+          <tbody id="wb-ex3-tbody" class="divide-y divide-slate-200 text-sm sm:text-base"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ЧАСТИНА 3: РОБОЧИЙ ЗОШИТ (с. 38) -->
+    <!-- ========================================================= -->
+    <div class="flex items-center gap-2 pt-2">
+      <span class="px-3 py-1 rounded-full bg-rose-100 text-rose-900 font-display font-semibold text-sm">
+        🌳 Робочий зошит • Page 38
+      </span>
+      <div class="h-px flex-1 bg-rose-200"></div>
+    </div>
+
+    <!-- ВПРАВА 4 (Зошит с. 38): Look and write as in the example -->
+    <section class="bg-white rounded-3xl p-5 sm:p-7 border border-rose-100 card-shadow">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-rose-500 text-white font-display font-bold text-xl flex items-center justify-center shadow">4</span>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800">Look and write as in the example.</h2>
+            <p class="text-sm text-slate-500">Подивись на родинне дерево та обери вік кожного члена родини словами.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="speakSlow('Look and write as in the example.')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-semibold transition">
+            🐢 0.5x Завдання
+          </button>
+          <button type="button" onclick="toggleTranslation('trans-wb-4')" class="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 text-sm font-semibold transition">
+            🇺🇦 Переклад
+          </button>
+        </div>
+      </div>
+
+      <div id="trans-wb-4" class="hidden mb-4 p-3 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-900">
+        <strong>Переклад завдання:</strong> Подивись на родинне дерево з іменами та віком і склади речення за зразком:<br/>
+        1. <em>Tom is five. Max is ten.</em> (Тому п’ять. Максу десять.)
+      </div>
+
+      <!-- Інтерактивне родинне дерево -->
+      <div class="rounded-3xl bg-gradient-to-b from-sky-100 via-emerald-50 to-amber-50 border-2 border-emerald-200 p-4 sm:p-6 mb-6">
+        <div class="text-center text-xs font-bold uppercase tracking-wider text-emerald-800 mb-4">
+          🌳 Family Tree (Натисни на картку, щоб послухати ім'я та вік)
+        </div>
+
+        <!-- Покоління 3 (діти) -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-3" id="tree-gen-3"></div>
+        <div class="flex justify-around text-emerald-600 font-bold text-lg select-none mb-2">
+          <span>↙ ↘</span>
+          <span>↙ ↓ ↘</span>
+        </div>
+
+        <!-- Покоління 2 (батьки) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-3xl mx-auto mb-3" id="tree-gen-2"></div>
+        <div class="flex justify-center text-amber-700 font-bold text-lg select-none mb-2">
+          <span>↙ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↘</span>
+        </div>
+
+        <!-- Покоління 1 (дідусь і бабуся) -->
+        <div class="grid grid-cols-2 gap-3 max-w-md mx-auto" id="tree-gen-1"></div>
+      </div>
+
+      <!-- Речення за зразком -->
+      <div class="space-y-3" id="wb-ex4-list"></div>
+    </section>
+
+  </main>
+
+  <script>
+    // =========================================================
+    // ОЗВУЧУВАННЯ (ЛИШЕ ШВИДКІСТЬ 0.5x)
+    // =========================================================
+    function speakSlow(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      utter.rate = 0.5;
+      utter.pitch = 1.05;
+      const voices = window.speechSynthesis.getVoices();
+      const enVoice = voices.find(v => v.lang && v.lang.startsWith('en'));
+      if (enVoice) utter.voice = enVoice;
+      window.speechSynthesis.speak(utter);
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
+    function toggleTranslation(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    // =========================================================
+    // ДАНІ ДЛЯ ВСІХ ВПРАВ
+    // =========================================================
+    const sentencesTb1 = [
+      { id: 1, en: 'A secretary works in an office.', uk: 'Секретар працює в офісі.', pic: 'd' },
+      { id: 2, en: 'A teacher works in a school.', uk: 'Вчитель працює в школі.', pic: 'b' },
+      { id: 3, en: 'A farmer works on a farm.', uk: 'Фермер працює на фермі.', pic: 'f' },
+      { id: 4, en: 'A doctor works in a hospital.', uk: 'Лікар працює в лікарні.', pic: 'e' },
+      { id: 5, en: 'A seller works in a shop.', uk: 'Продавець працює в магазині.', pic: 'c' },
+      { id: 6, en: 'A waiter works in a café.', uk: 'Офіціант працює в кафе.', pic: 'a' }
+    ];
+
+    const picturesTb1 = [
+      { letter: 'a', label: 'a café', uk: 'кафе', emoji: '☕📖', bg: 'from-amber-100 to-orange-100' },
+      { letter: 'b', label: 'a school', uk: 'школа', emoji: '🏫🧑‍🏫', bg: 'from-emerald-100 to-teal-100' },
+      { letter: 'c', label: 'a shop', uk: 'магазин', emoji: '🥐🏪', bg: 'from-rose-100 to-pink-100' },
+      { letter: 'd', label: 'an office', uk: 'офіс', emoji: '💻🗂️', bg: 'from-sky-100 to-blue-100' },
+      { letter: 'e', label: 'a hospital', uk: 'лікарня', emoji: '🩺🏥', bg: 'from-cyan-100 to-indigo-100' },
+      { letter: 'f', label: 'a farm', uk: 'ферма', emoji: '🚜🌾', bg: 'from-lime-100 to-green-100' }
+    ];
+
+    const wb1Words = [
+      { id: 'w1', prefix: 's', suffix: 'hool', missing: 'c', options: ['c', 'k', 's', 'h'], full: 'school', uk: 'школа', emoji: '🏫' },
+      { id: 'w2', prefix: '', suffix: 'op', missing: 'sh', options: ['sh', 'ch', 'th', 'ph'], full: 'shop', uk: 'магазин', emoji: '🏪' },
+      { id: 'w3', prefix: 'f', suffix: 'm', missing: 'ar', options: ['ar', 'or', 'er', 'ir'], full: 'farm', uk: 'ферма', emoji: '🚜' },
+      { id: 'w4', prefix: 'caf', suffix: '', missing: 'é', options: ['é', 'a', 'o', 'u'], full: 'café', uk: 'кафе', emoji: '☕' },
+      { id: 'w5', prefix: 'h', suffix: 'spital', missing: 'o', options: ['o', 'a', 'e', 'u'], full: 'hospital', uk: 'лікарня', emoji: '🏥' },
+      { id: 'w6', prefix: 'of', suffix: 'ice', missing: 'f', options: ['f', 'v', 'p', 't'], full: 'office', uk: 'офіс', emoji: '💻' }
+    ];
+
+    const wb2Sentences = [
+      { id: 's1', num: 1, start: 'A seller works', answer: 'in a shop', uk: 'Продавець працює в магазині.' },
+      { id: 's2', num: 2, start: 'A farmer works', answer: 'on a farm', uk: 'Фермер працює на фермі.' },
+      { id: 's3', num: 3, start: 'A teacher works', answer: 'in a school', uk: 'Вчитель працює в школі.' },
+      { id: 's4', num: 4, start: 'A waiter works', answer: 'in a café', uk: 'Офіціант працює в кафе.' },
+      { id: 's5', num: 5, start: 'A secretary works', answer: 'in an office', uk: 'Секретар працює в офісі.' },
+      { id: 's6', num: 6, start: 'A doctor works', answer: 'in a hospital', uk: 'Лікар працює в лікарні.' }
+    ];
+
+    const placeChoices = [
+      'in an office',
+      'in a school',
+      'on a farm',
+      'in a hospital',
+      'in a shop',
+      'in a café'
+    ];
+
+    const wb3Rows = [
+      { id: 't1', pronoun: 'I', fixed: true, answer: 'my', uk: 'Яка моя професія?' },
+      { id: 't2', pronoun: 'You', fixed: false, answer: 'your', uk: 'Яка твоя професія?' },
+      { id: 't3', pronoun: 'He', fixed: true, answer: 'his', uk: 'Яка його професія?' },
+      { id: 't4', pronoun: 'She', fixed: false, answer: 'her', uk: 'Яка її професія?' }
+    ];
+
+    const familyMembers = {
+      gen3: [
+        { name: 'Tom', age: 5, word: 'five', emoji: '👦' },
+        { name: 'Max', age: 10, word: 'ten', emoji: '🧑' },
+        { name: 'Mary', age: 12, word: 'twelve', emoji: '👧' },
+        { name: 'Nick', age: 4, word: 'four', emoji: '👶' },
+        { name: 'Ed', age: 11, word: 'eleven', emoji: '🧢' }
+      ],
+      gen2: [
+        { name: 'Ron', age: 35, word: 'thirty-five', emoji: '👨' },
+        { name: 'Grace', age: 32, word: 'thirty-two', emoji: '👩' },
+        { name: 'Will', age: 46, word: 'forty-six', emoji: '👨‍🦰' },
+        { name: 'Ann', age: 41, word: 'forty-one', emoji: '👩‍🦱' }
+      ],
+      gen1: [
+        { name: 'Dan', age: 72, word: 'seventy-two', emoji: '👴' },
+        { name: 'Emily', age: 67, word: 'sixty-seven', emoji: '👵' }
+      ]
+    };
+
+    const ageOptions = [
+      'four',
+      'five',
+      'ten',
+      'eleven',
+      'twelve',
+      'thirty-two',
+      'thirty-five',
+      'forty-one',
+      'forty-six',
+      'sixty-seven',
+      'seventy-two'
+    ];
+
+    const wb4Pairs = [
+      { id: 'f1', example: true, p1: 'Tom', a1: 'five', p2: 'Max', a2: 'ten', uk: 'Тому п’ять. Максу десять.' },
+      { id: 'f2', example: false, p1: 'Mary', a1: 'twelve', p2: 'Nick', a2: 'four', uk: 'Мері дванадцять. Ніку чотири.' },
+      { id: 'f3', example: false, p1: 'Ed', a1: 'eleven', p2: 'Ron', a2: 'thirty-five', uk: 'Еду одинадцять. Рону тридцять п’ять.' },
+      { id: 'f4', example: false, p1: 'Grace', a1: 'thirty-two', p2: 'Will', a2: 'forty-six', uk: 'Грейс тридцять два. Віллу сорок шість.' },
+      { id: 'f5', example: false, p1: 'Ann', a1: 'forty-one', p2: 'Dan', a2: 'seventy-two', uk: 'Енн сорок один. Дену сімдесят два.' },
+      { id: 'f6', example: false, p1: 'Emily', a1: 'sixty-seven', p2: null, a2: null, uk: 'Емілі шістдесят сім.' }
+    ];
+
+    // =========================================================
+    // ОБЛІК БАЛІВ
+    // =========================================================
+    const scoreMap = {};
+
+    function setItemScore(key, isCorrect) {
+      scoreMap[key] = isCorrect ? 1 : 0;
+      updateScoreDisplay();
+    }
+
+    function updateScoreDisplay() {
+      const total = Object.values(scoreMap).reduce((a, b) => a + b, 0);
+      document.getElementById('total-score').textContent = total;
+    }
+
+    // =========================================================
+    // РЕНДЕРИНГ ВПРАВ
+    // =========================================================
+    function initWorksheet() {
+      // 1. Підручник Вправа 1 (Речення + Малюнки)
+      const sContainer = document.getElementById('tb-ex1-sentences');
+      sContainer.innerHTML = sentencesTb1.map(item => `
+        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-xl bg-rose-500 text-white font-bold text-sm flex items-center justify-center shrink-0">${item.id}</span>
+              <span class="font-semibold text-slate-800 text-base">${item.en}</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="speakSlow('${item.en.replace(/'/g, "\\'")}')" class="btn-press px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+                🐢 0.5x
+              </button>
+              <button type="button" onclick="toggleTranslation('t-s1-${item.id}')" class="btn-press px-2.5 py-1 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-900 text-xs font-bold">
+                🇺🇦
+              </button>
+            </div>
+          </div>
+          <div id="t-s1-${item.id}" class="hidden text-xs font-medium text-sky-800 bg-sky-50 px-3 py-1.5 rounded-xl border border-sky-200">
+            ${item.uk}
+          </div>
+        </div>
+      `).join('');
+
+      const pContainer = document.getElementById('tb-ex1-pictures');
+      pContainer.innerHTML = picturesTb1.map(pic => `
+        <div onclick="speakSlow('${pic.label}')" class="cursor-pointer group p-4 rounded-2xl bg-gradient-to-br ${pic.bg} border border-slate-200 hover:border-sky-400 transition flex flex-col items-center text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">${pic.emoji}</div>
+          <div class="inline-flex items-center gap-2">
+            <span class="w-7 h-7 rounded-full bg-white border-2 border-slate-700 font-display font-bold text-slate-800 flex items-center justify-center text-sm shadow-sm">
+              ${pic.letter}
+            </span>
+            <span class="font-bold text-slate-800 text-sm">${pic.label}</span>
+            <span class="text-xs px-1.5 py-0.5 rounded bg-white/80 text-amber-900 font-bold">🐢 0.5x</span>
+          </div>
+          <span class="text-xs text-slate-600 mt-1">${pic.uk}</span>
+        </div>
+      `).join('');
+
+      // 2. Підручник Вправа 2 (Match)
+      const matchGrid = document.getElementById('tb-ex2-grid');
+      matchGrid.innerHTML = sentencesTb1.map(item => {
+        const isExample = item.id === 1;
+        if (!isExample) scoreMap[`tb2_${item.id}`] = 0;
+        return `
+          <div class="p-3.5 rounded-2xl bg-emerald-50/60 border border-emerald-200 flex flex-col gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-emerald-600 text-white font-bold text-sm flex items-center justify-center">${item.id}</span>
+                <span class="text-sm font-semibold text-slate-800">${item.en}</span>
+              </div>
+              <button type="button" onclick="speakSlow('${item.en.replace(/'/g, "\\'")}')" class="shrink-0 px-2 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+                🐢 0.5x
+              </button>
+            </div>
+            <div class="flex items-center gap-2 pt-1">
+              <label for="sel-tb2-${item.id}" class="text-xs font-semibold text-slate-600">Малюнок:</label>
+              ${
+                isExample
+                  ? `<span class="px-3 py-1 rounded-xl bg-emerald-200 text-emerald-950 font-bold text-sm">d (приклад)</span>`
+                  : `<select id="sel-tb2-${item.id}" onchange="clearSelectStyle(this)" class="flex-1 px-3 py-1.5 rounded-xl border-2 border-slate-300 bg-white font-bold text-sm text-slate-800">
+                      <option value="">— обери —</option>
+                      <option value="a">a (кафе)</option>
+                      <option value="b">b (школа)</option>
+                      <option value="c">c (магазин)</option>
+                      <option value="d">d (офіс)</option>
+                      <option value="e">e (лікарня)</option>
+                      <option value="f">f (ферма)</option>
+                    </select>
+                    <button type="button" onclick="checkTb2(${item.id}, '${item.pic}')" class="btn-press px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold">
+                      ✅ Перевірити
+                    </button>`
+              }
+            </div>
+            <div id="fb-tb2-${item.id}" class="text-xs font-bold min-h-[1rem]"></div>
+          </div>
+        `;
+      }).join('');
+
+      // 3. Робочий зошит Вправа 1 (Missing letters)
+      const wb1Grid = document.getElementById('wb-ex1-grid');
+      wb1Grid.innerHTML = wb1Words.map(w => {
+        scoreMap[w.id] = 0;
+        return `
+          <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 flex flex-col justify-between gap-3">
+            <div class="flex items-center justify-between">
+              <span class="text-3xl">${w.emoji}</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="speakSlow('${w.full}')" class="btn-press px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+                  🐢 0.5x
+                </button>
+                <button type="button" onclick="toggleTranslation('t-${w.id}')" class="btn-press px-2.5 py-1 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-900 text-xs font-bold">
+                  🇺🇦
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-1 text-xl font-display font-bold text-slate-800 bg-white py-2.5 px-3 rounded-xl border border-amber-200">
+              <span>${w.prefix}</span>
+              <select id="sel-${w.id}" onchange="clearSelectStyle(this)" class="px-2.5 py-1 rounded-lg border-2 border-amber-400 bg-amber-50 font-bold text-base text-slate-900">
+                <option value="">?</option>
+                ${w.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+              </select>
+              <span>${w.suffix}</span>
+            </div>
+
+            <div id="t-${w.id}" class="hidden text-xs text-center font-semibold text-sky-800 bg-sky-50 py-1 rounded-lg">
+              ${w.full} — ${w.uk}
+            </div>
+
+            <div class="flex items-center justify-between gap-2">
+              <span id="fb-${w.id}" class="text-xs font-bold"></span>
+              <button type="button" onclick="checkWb1('${w.id}', '${w.missing}', '${w.full}')" class="btn-press px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold ml-auto">
+                ✅ Перевірити
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 4. Робочий зошит Вправа 2 (Complete the sentences)
+      const wb2Grid = document.getElementById('wb-ex2-grid');
+      wb2Grid.innerHTML = wb2Sentences.map(s => {
+        scoreMap[s.id] = 0;
+        return `
+          <div class="p-4 rounded-2xl bg-sky-50/70 border border-sky-200 flex flex-col gap-2.5">
+            <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base font-semibold text-slate-800">
+              <span class="w-6 h-6 rounded-lg bg-sky-600 text-white font-bold text-xs flex items-center justify-center">${s.num}</span>
+              <span>${s.start}</span>
+              <select id="sel-${s.id}" onchange="clearSelectStyle(this)" class="px-3 py-1.5 rounded-xl border-2 border-sky-300 bg-white font-bold text-sm text-slate-900">
+                <option value="">— обери місце —</option>
+                ${placeChoices.map(p => `<option value="${p}">${p}</option>`).join('')}
+              </select>.
+            </div>
+
+            <div id="t-${s.id}" class="hidden text-xs font-medium text-sky-900 bg-white px-3 py-1.5 rounded-xl border border-sky-200">
+              ${s.uk}
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="speakWb2Sentence('${s.id}', '${s.start}')" class="btn-press px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+                  🐢 0.5x Речення
+                </button>
+                <button type="button" onclick="toggleTranslation('t-${s.id}')" class="btn-press px-2.5 py-1 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-900 text-xs font-bold">
+                  🇺🇦 Переклад
+                </button>
+              </div>
+              <div class="flex items-center gap-2">
+                <span id="fb-${s.id}" class="text-xs font-bold"></span>
+                <button type="button" onclick="checkWb2('${s.id}', '${s.answer}', '${s.start}')" class="btn-press px-3 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold">
+                  ✅ Перевірити
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 5. Робочий зошит Вправа 3 (Complete the table)
+      const wb3Tbody = document.getElementById('wb-ex3-tbody');
+      wb3Tbody.innerHTML = wb3Rows.map(r => {
+        if (!r.fixed) scoreMap[r.id] = 0;
+        return `
+          <tr class="hover:bg-teal-50/40 transition">
+            <td class="p-3.5 border-r border-slate-200 font-display font-bold text-teal-900">${r.pronoun}</td>
+            <td class="p-3.5 border-r border-slate-200">
+              <div class="flex flex-wrap items-center gap-2 font-semibold text-slate-800">
+                <span>What is</span>
+                ${
+                  r.fixed
+                    ? `<span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-900 font-bold">${r.answer}</span>`
+                    : `<select id="sel-${r.id}" onchange="clearSelectStyle(this)" class="px-3 py-1 rounded-xl border-2 border-teal-300 bg-white font-bold text-slate-900">
+                        <option value="">— обери —</option>
+                        <option value="my">my</option>
+                        <option value="your">your</option>
+                        <option value="his">his</option>
+                        <option value="her">her</option>
+                      </select>`
+                }
+                <span>job?</span>
+                <span id="fb-${r.id}" class="text-xs font-bold"></span>
+              </div>
+              <div id="t-${r.id}" class="hidden mt-1.5 text-xs text-sky-800 font-medium">${r.uk}</div>
+            </td>
+            <td class="p-3.5 text-right">
+              <div class="inline-flex flex-wrap items-center justify-end gap-1.5">
+                <button type="button" onclick="speakSlow('What is ${r.answer} job?')" class="btn-press px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+                  🐢 0.5x
+                </button>
+                <button type="button" onclick="toggleTranslation('t-${r.id}')" class="btn-press px-2.5 py-1 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-900 text-xs font-bold">
+                  🇺🇦
+                </button>
+                ${
+                  !r.fixed
+                    ? `<button type="button" onclick="checkWb3('${r.id}', '${r.answer}')" class="btn-press px-3 py-1 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold">
+                        ✅ Перевірити
+                      </button>`
+                    : `<span class="text-xs text-slate-400 font-semibold px-2">зразок</span>`
+                }
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // 6. Родинне дерево + Вправа 4 (Зошит с. 38)
+      renderTreeGen('tree-gen-3', familyMembers.gen3);
+      renderTreeGen('tree-gen-2', familyMembers.gen2);
+      renderTreeGen('tree-gen-1', familyMembers.gen1);
+
+      const wb4List = document.getElementById('wb-ex4-list');
+      wb4List.innerHTML = wb4Pairs.map((item, idx) => {
+        const num = idx + 1;
+        if (!item.example) scoreMap[item.id] = 0;
+
+        if (item.example) {
+          return `
+            <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5 font-semibold text-emerald-950">
+                <span class="w-7 h-7 rounded-lg bg-emerald-600 text-white font-bold text-sm flex items-center justify-center">${num}</span>
+                <span>${item.p1} is <strong>${item.a1}</strong>. ${item.p2} is <strong>${item.a2}</strong>.</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-bold">Зразок</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="speakSlow('${item.p1} is ${item.a1}. ${item.p2} is ${item.a2}.')" class="btn-press px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+                  🐢 0.5x
+                </button>
+                <button type="button" onclick="toggleTranslation('t-${item.id}')" class="btn-press px-2.5 py-1 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-900 text-xs font-bold">
+                  🇺🇦
+                </button>
+              </div>
+              <div id="t-${item.id}" class="hidden w-full text-xs text-sky-900 bg-white px-3 py-1.5 rounded-xl border border-sky-200">
+                ${item.uk}
+              </div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="p-4 rounded-2xl bg-rose-50/60 border border-rose-200 flex flex-col gap-2.5">
+            <div class="flex flex-wrap items-center gap-2 font-semibold text-slate-800 text-sm sm:text-base">
+              <span class="w-7 h-7 rounded-lg bg-rose-500 text-white font-bold text-sm flex items-center justify-center">${num}</span>
+              <span>${item.p1} is</span>
+              <select id="sel-${item.id}-1" onchange="clearSelectStyle(this)" class="px-3 py-1 rounded-xl border-2 border-rose-300 bg-white font-bold text-sm text-slate-900">
+                <option value="">— вік —</option>
+                ${ageOptions.map(a => `<option value="${a}">${a}</option>`).join('')}
+              </select>.
+              ${
+                item.p2
+                  ? `<span>${item.p2} is</span>
+                     <select id="sel-${item.id}-2" onchange="clearSelectStyle(this)" class="px-3 py-1 rounded-xl border-2 border-rose-300 bg-white font-bold text-sm text-slate-900">
+                       <option value="">— вік —</option>
+                       ${ageOptions.map(a => `<option value="${a}">${a}</option>`).join('')}
+                     </select>.`
+                  : ''
+              }
+            </div>
+
+            <div id="t-${item.id}" class="hidden text-xs text-sky-900 bg-white px-3 py-1.5 rounded-xl border border-sky-200">
+              ${item.uk}
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="speakWb4('${item.id}', '${item.p1}', '${item.a1}', '${item.p2 || ''}', '${item.a2 || ''}')" class="btn-press px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-950 text-xs font-bold">
+                  🐢 0.5x Речення
+                </button>
+                <button type="button" onclick="toggleTranslation('t-${item.id}')" class="btn-press px-2.5 py-1 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-900 text-xs font-bold">
+                  🇺🇦 Переклад
+                </button>
+              </div>
+              <div class="flex items-center gap-2">
+                <span id="fb-${item.id}" class="text-xs font-bold"></span>
+                <button type="button" onclick="checkWb4('${item.id}', '${item.a1}', '${item.a2 || ''}')" class="btn-press px-3 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold">
+                  ✅ Перевірити
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('max-score').textContent = Object.keys(scoreMap).length;
+      updateScoreDisplay();
+    }
+
+    function renderTreeGen(containerId, list) {
+      const el = document.getElementById(containerId);
+      el.innerHTML = list.map(m => `
+        <button type="button" onclick="speakSlow('${m.name} is ${m.word}.')" class="btn-press p-2.5 rounded-2xl bg-white/95 hover:bg-amber-50 border border-emerald-200 shadow-sm flex flex-col items-center text-center transition">
+          <span class="text-2xl">${m.emoji}</span>
+          <span class="font-display font-bold text-slate-800 text-sm">${m.name}, ${m.age}</span>
+          <span class="text-[11px] font-semibold text-amber-800">🐢 0.5x</span>
+        </button>
+      `).join('');
+    }
+
+    // =========================================================
+    // ЛОГІКА ПЕРЕВІРКИ ТА ДІАЛОГУ
+    // =========================================================
+    function clearSelectStyle(sel) {
+      sel.classList.remove('select-correct', 'select-wrong');
+    }
+
+    // Перевірка Вправи 2 (Підручник)
+    function checkTb2(id, correctLetter) {
+      const sel = document.getElementById(`sel-tb2-${id}`);
+      const fb = document.getElementById(`fb-tb2-${id}`);
+      const val = sel.value;
+      clearSelectStyle(sel);
+
+      if (!val) {
+        fb.textContent = '⚠️ Обери літеру зі списку';
+        fb.className = 'text-xs font-bold text-amber-700';
+        return;
+      }
+
+      if (val === correctLetter) {
+        sel.classList.add('select-correct');
+        fb.textContent = '✅ Чудово! Правильно!';
+        fb.className = 'text-xs font-bold text-emerald-700';
+        setItemScore(`tb2_${id}`, true);
+        const sentence = sentencesTb1.find(s => s.id === id);
+        if (sentence) speakSlow(sentence.en);
+      } else {
+        sel.classList.add('select-wrong');
+        fb.textContent = '❌ Спробуй ще раз';
+        fb.className = 'text-xs font-bold text-rose-600';
+        setItemScore(`tb2_${id}`, false);
+      }
+    }
+
+    // Конструктор діалогу (Вправа 3 підручника)
+    const dlgRelativeEl = document.getElementById('dlg-relative');
+    dlgRelativeEl.addEventListener('change', () => {
+      const [, pronoun] = dlgRelativeEl.value.split('|');
+      document.getElementById('dlg-pronoun-1').textContent = pronoun;
+      document.getElementById('dlg-pronoun-2').textContent = pronoun.toLowerCase();
+      document.getElementById('dlg-pronoun-3').textContent = pronoun;
+      document.getElementById('dlg-feedback').textContent = '';
+    });
+
+    function speakDialogue() {
+      const [rel, pronoun] = document.getElementById('dlg-relative').value.split('|');
+      const [job] = document.getElementById('dlg-job').value.split('|');
+      const place = document.getElementById('dlg-place').value;
+      const text = `What is your ${rel} job? ${pronoun} is a ${job}. Where does ${pronoun.toLowerCase()} work? ${pronoun} works ${place}.`;
+      speakSlow(text);
+    }
+
+    function checkDialogue() {
+      const [, expectedPlace] = document.getElementById('dlg-job').value.split('|');
+      const chosenPlace = document.getElementById('dlg-place').value;
+      const fb = document.getElementById('dlg-feedback');
+      if (expectedPlace === chosenPlace) {
+        fb.textContent = '✅ Чудовий діалог! Професія та місце роботи збігаються!';
+        fb.className = 'text-sm font-bold text-emerald-700';
+        speakDialogue();
+      } else {
+        fb.textContent = `❌ Подумай: ця професія працює в іншому місці (підказка: ${expectedPlace}).`;
+        fb.className = 'text-sm font-bold text-rose-600';
+      }
+    }
+
+    // Перевірка Вправи 1 (Зошит с. 37)
+    function checkWb1(id, correct, fullWord) {
+      const sel = document.getElementById(`sel-${id}`);
+      const fb = document.getElementById(`fb-${id}`);
+      clearSelectStyle(sel);
+
+      if (!sel.value) {
+        fb.textContent = '⚠️ Обери літеру';
+        fb.className = 'text-xs font-bold text-amber-700';
+        return;
+      }
+
+      if (sel.value === correct) {
+        sel.classList.add('select-correct');
+        fb.textContent = `✅ ${fullWord}!`;
+        fb.className = 'text-xs font-bold text-emerald-700';
+        setItemScore(id, true);
+        speakSlow(fullWord);
+      } else {
+        sel.classList.add('select-wrong');
+        fb.textContent = '❌ Невірно';
+        fb.className = 'text-xs font-bold text-rose-600';
+        setItemScore(id, false);
+      }
+    }
+
+    // Перевірка та озвучування Вправи 2 (Зошит с. 37)
+    function speakWb2Sentence(id, start) {
+      const val = document.getElementById(`sel-${id}`).value;
+      speakSlow(val ? `${start} ${val}.` : `${start}...`);
+    }
+
+    function checkWb2(id, correctPlace, start) {
+      const sel = document.getElementById(`sel-${id}`);
+      const fb = document.getElementById(`fb-${id}`);
+      clearSelectStyle(sel);
+
+      if (!sel.value) {
+        fb.textContent = '⚠️ Обери варіант';
+        fb.className = 'text-xs font-bold text-amber-700';
+        return;
+      }
+
+      if (sel.value === correctPlace) {
+        sel.classList.add('select-correct');
+        fb.textContent = '✅ Правильно!';
+        fb.className = 'text-xs font-bold text-emerald-700';
+        setItemScore(id, true);
+        speakSlow(`${start} ${correctPlace}.`);
+      } else {
+        sel.classList.add('select-wrong');
+        fb.textContent = '❌ Спробуй ще';
+        fb.className = 'text-xs font-bold text-rose-600';
+        setItemScore(id, false);
+      }
+    }
+
+    // Перевірка Вправи 3 (Зошит с. 37)
+    function checkWb3(id, correctWord) {
+      const sel = document.getElementById(`sel-${id}`);
+      const fb = document.getElementById(`fb-${id}`);
+      clearSelectStyle(sel);
+
+      if (!sel.value) {
+        fb.textContent = '⚠️ Обери слово';
+        fb.className = 'text-xs font-bold text-amber-700';
+        return;
+      }
+
+      if (sel.value === correctWord) {
+        sel.classList.add('select-correct');
+        fb.textContent = '✅ Вірно!';
+        fb.className = 'text-xs font-bold text-emerald-700';
+        setItemScore(id, true);
+        speakSlow(`What is ${correctWord} job?`);
+      } else {
+        sel.classList.add('select-wrong');
+        fb.textContent = '❌ Помилка';
+        fb.className = 'text-xs font-bold text-rose-600';
+        setItemScore(id, false);
+      }
+    }
+
+    // Перевірка та озвучування Вправи 4 (Зошит с. 38)
+    function speakWb4(id, p1, a1, p2, a2) {
+      const s1 = document.getElementById(`sel-${id}-1`).value || a1;
+      if (!p2) {
+        speakSlow(`${p1} is ${s1}.`);
+      } else {
+        const s2 = document.getElementById(`sel-${id}-2`).value || a2;
+        speakSlow(`${p1} is ${s1}. ${p2} is ${s2}.`);
+      }
+    }
+
+    function checkWb4(id, a1, a2) {
+      const sel1 = document.getElementById(`sel-${id}-1`);
+      const sel2 = document.getElementById(`sel-${id}-2`);
+      const fb = document.getElementById(`fb-${id}`);
+
+      clearSelectStyle(sel1);
+      if (sel2) clearSelectStyle(sel2);
+
+      if (!sel1.value || (sel2 && !sel2.value)) {
+        fb.textContent = '⚠️ Заповни всі списки';
+        fb.className = 'text-xs font-bold text-amber-700';
+        return;
+      }
+
+      const ok1 = sel1.value === a1;
+      const ok2 = !sel2 || sel2.value === a2;
+
+      sel1.classList.add(ok1 ? 'select-correct' : 'select-wrong');
+      if (sel2) sel2.classList.add(ok2 ? 'select-correct' : 'select-wrong');
+
+      if (ok1 && ok2) {
+        fb.textContent = '✅ Чудово! Усе правильно!';
+        fb.className = 'text-xs font-bold text-emerald-700';
+        setItemScore(id, true);
+        const item = wb4Pairs.find(x => x.id === id);
+        if (item) speakWb4(id, item.p1, a1, item.p2, a2);
+      } else {
+        fb.textContent = '❌ Перевір вік на дереві';
+        fb.className = 'text-xs font-bold text-rose-600';
+        setItemScore(id, false);
+      }
+    }
+
+    function resetAll() {
+      Object.keys(scoreMap).forEach(k => (scoreMap[k] = 0));
+      initWorksheet();
+      document.getElementById('dlg-feedback').textContent = '';
+    }
+
+    initWorksheet();
+  </script>
+</body>
+</html>
