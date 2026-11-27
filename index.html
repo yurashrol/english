@@ -441,8 +441,8 @@
       window.speechSynthesis.cancel();
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = 'en-US';
-      utter.rate = 0.5;
-      utter.pitch = 1.05;
+      utter.rate = 0.75;
+      utter.pitch = 1.0;
 
       const voices = window.speechSynthesis.getVoices();
       const preferred = [
