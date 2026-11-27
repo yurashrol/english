@@ -443,14 +443,42 @@
       utter.lang = 'en-US';
       utter.rate = 0.5;
       utter.pitch = 1.05;
+
       const voices = window.speechSynthesis.getVoices();
-      const enVoice = voices.find(v => v.lang && v.lang.startsWith('en'));
-      if (enVoice) utter.voice = enVoice;
+      const preferred = [
+        'Google UK English Female',
+        'Google US English',
+        'Microsoft Aria',
+        'Microsoft Jenny',
+        'Microsoft Zira',
+        'slt',
+        'female',
+        'Samantha'
+      ];
+
+      let selectedVoice = null;
+      for (const key of preferred) {
+        selectedVoice = voices.find(v => v.name.toLowerCase().includes(key.toLowerCase()));
+        if (selectedVoice) break;
+      }
+
+      if (!selectedVoice) {
+        selectedVoice =
+          voices.find(v => v.lang && v.lang.startsWith('en') && !v.name.toLowerCase().includes('espeak')) ||
+          voices.find(v => v.lang && v.lang.startsWith('en'));
+      }
+
+      if (selectedVoice) utter.voice = selectedVoice;
       window.speechSynthesis.speak(utter);
     }
 
     if ('speechSynthesis' in window) {
       window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
+    function toggleTranslation(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
     }
 
     function toggleTranslation(id) {
